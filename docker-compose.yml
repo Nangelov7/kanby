@@ -1,0 +1,10 @@
+version: 3.7
+services:
+    api:
+        container_name: kanban-api
+        build: ./api
+    web:
+        container_name: kanban-web
+        build: ./web
+        depends_on:
+            - api

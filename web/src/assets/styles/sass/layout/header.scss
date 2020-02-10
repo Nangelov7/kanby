@@ -1,0 +1,12 @@
+@import '../utilities/variables';
+
+#header {
+    background-color: $primary-color;
+    width: -moz-calc(100% - #{$sidebar-width});
+    width: -webkit-calc(100% - #{$sidebar-width});
+    width: calc(100% - #{$sidebar-width});
+    border-bottom: 2px solid $sidebar-color;
+    text-align: center;
+    height: 40px;
+    float: right;
+}

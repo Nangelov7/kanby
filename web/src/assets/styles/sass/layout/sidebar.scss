@@ -1,0 +1,8 @@
+@import '../utilities/variables';
+
+#sidebar {
+    float: left;
+    width: $sidebar-width;
+    height: 631px;
+    background-color: $sidebar-color;
+}

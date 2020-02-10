@@ -1,0 +1,21 @@
+@import '../utilities/_variables.scss';
+
+#newTask {
+    width: 90%;
+    height: 40px;
+    border-radius: 5px;
+    text-align: center;
+    background-color: $note-color;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    margin: {
+        top: 10px;
+        left: 10px;
+        right: 10px;
+    }
+}
+
+#addTask {
+    margin-top: 10px;
+    height: 20px;
+    width: 20px;
+}
