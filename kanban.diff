@@ -1,0 +1,16 @@
+# TODO
+- Make notes and columns draggable (drag & drop)
+- Change notes design to show their priority (red/yellow/green for high/medium/low)
+- Make add new note clickable, fixed to the bottom
+- Make notes upgradeable by double clicking them
+
+# BUILD
+
+# FIX
+
+# TEST
+
+# DONE
++ Get data from API
++ Notes from diffrent columns should contain diffrent data (Parent to child data exchange)
++ Show trash icon (remove note) after hovering on a specific note

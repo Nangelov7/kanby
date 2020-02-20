@@ -1,11 +1,15 @@
-import React from 'react'
+import React, { Component } from 'react'
 import '../assets/styles/css/layout/sidebar.css'
 
-export default () => {
-    return (
-        <>
-        <div id="sidebar">
-        </div>
-        </>
-    )
+class Sidebar extends Component {
+    render() {
+        return (
+            <>
+                <div id="sidebar">
+                </div>
+            </>
+        )
+    }
 }
+
+export default Sidebar

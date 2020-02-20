@@ -1,19 +1,23 @@
-import React from 'react'
+import React, { Component } from 'react'
+import { Provider } from '../context'
 import Header from '../components/Header'
 import Sidebar from '../components/Sidebar'
 import Board from '../components/Board'
 import '../assets/styles/css/base/dashboard.css'
 
-function Dashboard() {
-  return (
-    <>
-    <div id="dashboard">
-      <Header></Header>
-      <Sidebar></Sidebar>
-      <Board></Board>
-    </div>
-    </>
-  )
+class Dashboard extends Component {
+
+  render() {
+    return (
+      <Provider>
+        <div id="dashboard">
+          <Header></Header>
+          <Sidebar></Sidebar>
+          <Board></Board>
+        </div>
+      </Provider>
+    )
+  }
 }
 
-export default Dashboard;
+export default Dashboard

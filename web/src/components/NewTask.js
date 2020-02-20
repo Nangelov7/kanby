@@ -1,13 +1,17 @@
-import React from 'react'
+import React, { Component } from 'react'
 import '../assets/styles/css/components/newTask.css'
-import plus from '../assets/images/add.png'
+import addIcon from '../assets/images/add.png'
 
-export default () => {
-    return (
-        <>
-        <div id="newTask">
-            <img id="addTask" src={plus} alt="Add"/>
-        </div>
-        </>
-    )
+class NewTask extends Component {
+    render() {
+        return (
+            <>
+                <div id="newTask">
+                    <img id="addTask" src={addIcon} alt="Add" />
+                </div>
+            </>
+        )
+    }
 }
+
+export default NewTask

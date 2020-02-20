@@ -1,17 +1,47 @@
-import React from 'react'
+import React, { Component } from 'react'
 import Column from './Column'
+import { Consumer } from '../context'
 import '../assets/styles/css/layout/board.css'
 
-export default () => {
-    return (
-        <>
-        <div id="board">
-            <Column stage="TODO"></Column>
-            <Column stage="BUILD"></Column>
-            <Column stage="FIX"></Column>
-            <Column stage="TEST"></Column>
-            <Column stage="DONE"></Column>
-        </div>
-        </>
-    )
+class Board extends Component {
+    render() {
+        return (
+            <>
+                <div id="board">
+                    <Consumer>
+                        {value => {
+                            const { todoNotes } = value
+                            return < Column stage="TODO" notes={todoNotes}></Column>
+                        }}
+                    </Consumer>
+                    <Consumer>
+                        {value => {
+                            const { buildNotes } = value
+                            return < Column stage="BUILD" notes={buildNotes}></Column>
+                        }}
+                    </Consumer>
+                    <Consumer>
+                        {value => {
+                            const { fixNotes } = value
+                            return <Column stage="FIX" notes={fixNotes}></Column> 
+                        }}
+                    </Consumer>
+                    <Consumer>
+                        {value => {
+                            const { testNotes } = value
+                            return <Column stage="TEST" notes={testNotes}></Column>
+                        }}
+                    </Consumer>
+                    <Consumer>
+                        {value => {
+                            const { doneNotes } = value
+                            return <Column stage="DONE" notes={doneNotes}></Column>
+                        }}
+                    </Consumer>
+                </div>
+            </>
+        )
+    }
 }
+
+export default Board

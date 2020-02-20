@@ -14,10 +14,24 @@
         left: 10px;
         right: 10px;
     }
+    &:hover {
+        #deleteTask {
+            visibility: visible;
+        }
+    }
     p {
         margin: {
             top: 5px;
             left: 5px;
         }
+    }
+    #deleteTask {
+        height: 18px;
+        width: 18px;
+        visibility: hidden;
+        float: right;
+        position: relative;
+        top: 20px;
+        right: 5px;
     }
 }

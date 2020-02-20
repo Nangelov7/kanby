@@ -17,10 +17,12 @@ router.get('/', (req, res) => {
 
 router.post('/', (req, res) => {
     let text = req.body.text
+    let priority = req.body.priority
     const Fix = new Note({
         _id: new mongoose.Types.ObjectId(),
         text: text,
-        stage: stage
+        stage: stage,
+        priority: priority
     })
     Fix.save()
     .then(note => {
@@ -34,7 +36,8 @@ router.put('/:id', (req, res) => {
     let id = req.params.id
     let text = req.body.text
     let stage = req.body.stage
-    Note.findOneAndUpdate({ _id: id }, { text: text, stage: stage })
+    let priority = req.body.priority
+    Note.findOneAndUpdate({ _id: id }, { text: text, stage: stage, priority: priority })
     .exec()
     .then(note => {
         res.status(200).json(note)

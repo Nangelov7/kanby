@@ -1,6 +1,6 @@
 FROM node
-COPY ["package.json", "yarn.lock", "/kanban-api/"]
-WORKDIR /kanban-api/
+COPY ["package.json", "yarn.lock", "/kanban-web/"]
+WORKDIR /kanban-web/
 RUN yarn install
-COPY * .
+COPY * /kanban-web/
 CMD ["yarn", "start"]

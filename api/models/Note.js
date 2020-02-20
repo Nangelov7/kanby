@@ -12,6 +12,11 @@ const NoteSchema = new mongoose.Schema({
         type: String,
         required: true,
         trim: true
+    },
+    priority: {
+        type: String,
+        required: true,
+        trim: true
     }
 })
 
