@@ -3,6 +3,7 @@
 - Change notes design to show their priority (red/yellow/green for high/medium/low)
 - Make add new note clickable, fixed to the bottom
 - Make notes upgradeable by double clicking them
+- Validate input to database
 
 # BUILD
 

@@ -26,8 +26,8 @@ class Column extends Component {
                     <div id="stage"><span>{this.props.stage}</span></div>
                     <div id="column">
                         {this.state.notes.map((note, i) => {
-                            let { text } = note
-                            return <Note key={i} text={text}></Note>
+                            let { _id, text } = note
+                            return <Note key={i} noteId={_id} text={text}></Note>
                         })}
                         <NewTask></NewTask>
                     </div>

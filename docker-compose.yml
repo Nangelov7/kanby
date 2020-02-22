@@ -1,10 +1,32 @@
-version: 3.7
+version: "3.3"
 services:
     api:
         container_name: kanban-api
         build: ./api
+        restart: always
+        ports:
+            - "4000:4000"
+        volumes:
+            - ./api:/api
+            - /api/node_modules
+        depends_on:
+            - db
     web:
         container_name: kanban-web
         build: ./web
+        restart: always
+        ports: 
+            - "3000:3000"
+        volumes:
+            - ./web:/web
+            - /web/node_modules
+        links: 
+            - api
         depends_on:
             - api
+    db:
+        container_name: kanban-db
+        image: mongo
+        restart: always
+        ports: 
+            - "27017:27017"

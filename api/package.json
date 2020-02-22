@@ -5,9 +5,9 @@
   "author": "nangelov7",
   "license": "MIT",
   "scripts": {
-    "start": "node app",
-    "dev": "nodemon app",
-    "test": "jest",
+    "start": "node server",
+    "dev": "nodemon server",
+    "test": "jest --coverage",
     "test:watch": "jest --watch"
   },
   "dependencies": {
