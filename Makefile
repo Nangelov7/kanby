@@ -1,5 +1,5 @@
 API_NAME=kanban_api:latest
-WEB_NAME=kanban_web:latest
+CLIENT_NAME=kanban_client:latest
 
 all: build up
 
@@ -18,7 +18,7 @@ stop:
 	sudo docker-compose stop
 
 rmi:
-	sudo docker rmi $(API_NAME) $(WEB_NAME)
+	sudo docker rmi $(API_NAME) $(CLIENT_NAME)
 
 help:
 	@echo '-------------------------------------------------------------'

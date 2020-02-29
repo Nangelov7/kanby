@@ -1,6 +1,6 @@
 @import '../utilities/_variables.scss';
 
-#newTask {
+.newTask {
     width: 90%;
     height: 40px;
     border-radius: 5px;
@@ -14,7 +14,7 @@
     }
 }
 
-#addTask {
+.addTask {
     margin-top: 10px;
     height: 20px;
     width: 20px;

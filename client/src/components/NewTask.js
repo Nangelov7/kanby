@@ -1,13 +1,13 @@
-import React, { Component } from 'react'
+import React, { PureComponent } from 'react'
 import '../assets/styles/css/components/newTask.css'
 import addIcon from '../assets/images/add.png'
 
-class NewTask extends Component {
+class NewTask extends PureComponent {
     render() {
         return (
             <>
-                <div id="newTask">
-                    <img id="addTask" src={addIcon} alt="Add" />
+                <div className="newTask">
+                    <img className="addTask" src={addIcon} alt="Add" />
                 </div>
             </>
         )

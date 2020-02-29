@@ -1,11 +1,11 @@
-import React, { Component } from 'react'
+import React, { PureComponent } from 'react'
 import '../assets/styles/css/layout/header.css'
 
-class Header extends Component {
+class Header extends PureComponent {
     render() {
         return (
             <>
-                <div id="header">
+                <div className="header">
                     <h1>KANBAN BOARD</h1>
                 </div>
             </>

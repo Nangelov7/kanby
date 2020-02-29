@@ -1,6 +1,6 @@
 @import '../utilities/_variables.scss';
 
-#note {
+.note {
     width: 90%;
     height: 70px;
     border: {
@@ -15,7 +15,7 @@
         right: 10px;
     }
     &:hover {
-        #deleteTask {
+        .deleteTask {
             visibility: visible;
         }
     }
@@ -25,7 +25,7 @@
             left: 5px;
         }
     }
-    #deleteTask {
+    .deleteTask {
         height: 18px;
         width: 18px;
         visibility: hidden;

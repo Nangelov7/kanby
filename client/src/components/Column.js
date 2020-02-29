@@ -22,9 +22,9 @@ class Column extends Component {
     render() {
         return (
             <>
-                <div id="container" draggable="true">
-                    <div id="stage"><span>{this.props.stage}</span></div>
-                    <div id="column">
+                <div className="container">
+                    <div className="stage"><span>{this.props.stage}</span></div>
+                    <div className="column">
                         {this.state.notes.map((note, i) => {
                             let { _id, text } = note
                             return <Note key={i} noteId={_id} text={text}></Note>

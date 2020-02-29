@@ -12,14 +12,14 @@ services:
         depends_on:
             - db
     web:
-        container_name: kanban-web
-        build: ./web
+        container_name: kanban-client
+        build: ./client
         restart: always
         ports: 
             - "3000:3000"
         volumes:
-            - ./web:/web
-            - /web/node_modules
+            - ./client:/client
+            - /client/node_modules
         links: 
             - api
         depends_on:

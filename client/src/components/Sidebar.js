@@ -1,11 +1,11 @@
-import React, { Component } from 'react'
+import React, { PureComponent } from 'react'
 import '../assets/styles/css/layout/sidebar.css'
 
-class Sidebar extends Component {
+class Sidebar extends PureComponent {
     render() {
         return (
             <>
-                <div id="sidebar">
+                <div className="sidebar">
                 </div>
             </>
         )

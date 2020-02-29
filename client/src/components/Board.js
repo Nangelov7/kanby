@@ -7,7 +7,7 @@ class Board extends Component {
     render() {
         return (
             <>
-                <div id="board">
+                <div className="board">
                     <Consumer>
                         {value => {
                             const { todoNotes } = value

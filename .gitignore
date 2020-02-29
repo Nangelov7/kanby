@@ -1,5 +1,6 @@
 node_modules/
 coverage/
+build/
+css/
 *.log
 .env
-css/
