@@ -14,7 +14,7 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test",
+    "test": "jest",
     "eject": "react-scripts eject"
   },
   "eslintConfig": {
@@ -34,9 +34,13 @@
   },
   "devDependencies": {
     "del": "^5.1.0",
+    "faker": "^4.1.0",
     "gulp": "^4.0.2",
     "gulp-minify-css": "^1.2.4",
-    "gulp-sass": "^4.0.2"
+    "gulp-sass": "^4.0.2",
+    "jest-puppeteer": "^4.4.0",
+    "puppeteer": "^2.1.1",
+    "react-test-renderer": "^16.13.0"
   },
   "proxy": "http://localhost:4000"
 }

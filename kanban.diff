@@ -3,19 +3,22 @@
 - Make add new note clickable, fixed to the bottom & implement add new note functionality
 - Make notes removable by clicking on the trash icon
 - Make notes upgradeable by double clicking them (textarea)
+- Make button and modalbox components
+- Restructure core logic of kanban board (build/doing & change fix to something else)
 - Make columns scrollable
 - Implement API authorization
+- Unit, snapshot, e2e testing
 
 # BUILD
 - Validate and sanitize input to database
 - Limit notes to 140 characters
 
 # FIX
-- Make notes and columns draggable (drag & drop)
 
 # TEST
 
 # DONE
 + Get data from API
++ Make notes and columns draggable (drag & drop)
 + Notes from diffrent columns should contain diffrent data (Parent to child data exchange)
 + Show trash icon (remove note) after hovering on a specific note
