@@ -1,0 +1,12 @@
+@import '../utilities/variables';
+
+.btn {
+    background-color: $primary-color;
+    color: white;
+    border-radius: 10px;
+    border: none;
+}
+
+.btn:hover {
+    background-color: darken($primary-color, 20);
+}

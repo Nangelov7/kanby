@@ -44,8 +44,8 @@ class Note extends Component {
                 })
                 column.addEventListener('drop', () => {
                     column.style.filter = 'brightness(100%)'
-                    const addTask = column.lastChild
-                    addTask.before(selectedNote)
+                    const newNote = column.lastChild
+                    newNote.before(selectedNote)
                 })
             }
         }
@@ -56,7 +56,7 @@ class Note extends Component {
             <>
                 <div className="note" draggable onMouseDown={this.dragAndDrop}>
                     <p>{this.props.text}</p>
-                    <img className="deleteTask" src={deleteIcon} alt="Delete"/>
+                    <img className="deleteNote" src={deleteIcon} alt="Delete"/>
                 </div>
             </>
         )

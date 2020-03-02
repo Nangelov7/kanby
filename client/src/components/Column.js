@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import Note from './Note'
-import NewTask from './NewTask'
+import NewNote from './NewNote'
 import '../assets/styles/css/components/column.css'
 
 class Column extends Component {
@@ -29,7 +29,7 @@ class Column extends Component {
                             let { _id, text } = note
                             return <Note key={i} noteId={_id} text={text}></Note>
                         })}
-                        <NewTask></NewTask>
+                        <NewNote></NewNote>
                     </div>
                 </div>
             </>
