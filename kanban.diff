@@ -5,13 +5,12 @@
 - Make notes upgradeable by double clicking them (textarea)
 - Make button and modalbox components
 - Restructure core logic of kanban board (build/doing & change fix to something else)
+- Validate and sanitize input to database
 - Make columns scrollable
 - Implement API authorization
 - Unit, snapshot, e2e testing
 
 # BUILD
-- Validate and sanitize input to database
-- Limit notes to 140 characters
 
 # FIX
 
@@ -19,6 +18,7 @@
 
 # DONE
 + Get data from API
++ Limit notes to 80 characters
 + Make notes and columns draggable (drag & drop)
 + Notes from diffrent columns should contain diffrent data (Parent to child data exchange)
 + Show trash icon (remove note) after hovering on a specific note

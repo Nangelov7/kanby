@@ -6,17 +6,20 @@ const NoteSchema = new mongoose.Schema({
         type: String,
         required: true,
         unique: true,
-        trim: true
+        trim: true,
+        maxlength: 80
     },
     stage: {
         type: String,
         required: true,
-        trim: true
+        trim: true,
+        enum: ['todo', 'build', 'fix', 'test', 'done']
     },
     priority: {
         type: String,
         required: true,
-        trim: true
+        trim: true,
+        enum: ['low', 'medium', 'high']
     }
 })
 
