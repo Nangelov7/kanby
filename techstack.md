@@ -23,7 +23,7 @@ DevOps
 QA
 ----------------------------------------
 **Unit Testing:** Jest  
-**End-to-End Testing:** Cypress/Puppeteer  
+**End-to-End Testing:** Puppeteer  
 
 General
 ----------------------------------------

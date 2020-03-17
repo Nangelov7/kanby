@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import React, { Component } from 'react'
 import axios from 'axios'
 
@@ -15,14 +16,13 @@ export class Provider extends Component {
 
     componentDidMount() {
 
-        //const url = 'http://www.boredapi.com/api/activity/'
         const url = 'http://localhost:4000'
 
         axios.get(`${url}/todo`)
         .then(res => {
             this.setState({ todoNotes:  res.data })
         })
-        .catch(err => console.log(err))
+        // .catch(err => console.log(err))
         axios.get(`${url}/build`)
         .then(res => {
             this.setState({ buildNotes: res.data })

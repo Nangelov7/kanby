@@ -9,16 +9,4 @@
 - Make columns scrollable
 - Implement API authorization
 - Unit, snapshot, e2e testing
-
-# BUILD
-
-# FIX
-
-# TEST
-
-# DONE
-+ Get data from API
-+ Limit notes to 80 characters
-+ Make notes and columns draggable (drag & drop)
-+ Notes from diffrent columns should contain diffrent data (Parent to child data exchange)
-+ Show trash icon (remove note) after hovering on a specific note
+- Make API calls asynch await

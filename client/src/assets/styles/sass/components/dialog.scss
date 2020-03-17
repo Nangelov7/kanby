@@ -1,0 +1,20 @@
+@import '../utilities/variables';
+
+dialog {
+    width: 260px;
+    height: 150px;
+    border: {
+        radius: 5px;
+        style: none;
+    }
+    position: fixed;
+    top: 230px;
+    left: 550px;
+    background-color: $note-color;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    margin: {
+        top: 10px;
+        left: 10px;
+        right: 10px;
+    }
+}

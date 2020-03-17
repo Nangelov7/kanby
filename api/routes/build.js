@@ -2,9 +2,9 @@ const router = require('express').Router()
 const mongoose = require('mongoose')
 
 const Note = require('../models/Note')
-let stage = 'build'
+const stage = 'build'
 
-router.get('/', (req, res) => {
+router.get(`/${stage}`, (req, res) => {
     Note.find({ stage: stage }).select('-__v -stage')
     .exec()
     .then(notes => {
@@ -15,7 +15,7 @@ router.get('/', (req, res) => {
     })
 })
 
-router.post('/', (req, res) => {
+router.post(`/${stage}`, (req, res) => {
     let text = req.body.text
     let priority = req.body.priority
     const Build = new Note({
@@ -32,7 +32,7 @@ router.post('/', (req, res) => {
     })
 })
 
-router.put('/:id', (req, res) => {
+router.put(`/${stage}/:id`, (req, res) => {
     let id = req.params.id
     let text = req.body.text
     let stage = req.body.stage
@@ -46,7 +46,7 @@ router.put('/:id', (req, res) => {
     })
 })
 
-router.delete('/:id', (req, res) => {
+router.delete(`/${stage}/: id`, (req, res) => {
     let id = req.params.id
     Note.deleteOne({ _id: id })
     .exec()

@@ -2,6 +2,9 @@ sudo: required
 language: node_js
 node_js:
     - lts/*
+    - node
+    - 10
+    - 8
 services:
     - docker
 install: yarn install

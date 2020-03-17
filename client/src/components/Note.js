@@ -2,13 +2,24 @@
 import React, { Component } from 'react'
 import '../assets/styles/css/components/note.css'
 import deleteIcon from '../assets/images/delete.png'
+import Dialog from './Dialog'
 
 class Note extends Component {
 
     constructor(props) {
         super(props)
+        this.state = {
+            dialogOpened: false
+        }
 
+        this.openDialog = this.openDialog.bind(this)
         this.dragAndDrop = this.dragAndDrop.bind(this)
+    }
+
+    openDialog() {
+        this.setState({
+            dialogOpened: !this.state.dialogOpened
+        })
     }
 
     dragAndDrop() {
@@ -56,8 +67,9 @@ class Note extends Component {
             <>
                 <div className="note" draggable onMouseDown={this.dragAndDrop}>
                     <p>{this.props.text}</p>
-                    <img className="deleteNote" src={deleteIcon} alt="Delete"/>
+                    <img className="deleteNote" src={deleteIcon} alt="Delete" onClick={this.openDialog} />
                 </div>
+                {this.state.dialogOpened ? <Dialog dialogType="DeleteNote" /> : null}
             </>
         )
     }
