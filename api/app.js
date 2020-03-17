@@ -1,9 +1,9 @@
 const express = require('express')
 const app = express()
-const routes = require('./middleware/routes')
-const middleware = require('./middleware/middleware')
+const middleware = require('./middlewares/middleware')
+const routes = require('./middlewares/routes')
 
-app.use(routes)
 app.use(middleware)
+app.use(routes)
 
 module.exports = app
