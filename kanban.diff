@@ -1,10 +1,9 @@
 ################
 #     API      #
 ################ 
-- Restructure core logic of kanban board (build/doing & change fix to something else)
+- Change /fix endpoint to something else
 - Validate and sanitize input to database
 - Implement API authorization
-- Introduce controllers
 ################
 #    CLIENT    #
 ################ 
@@ -21,5 +20,5 @@
 ################
 #    GENERAL   #
 ################ 
-- Make API calls asynch await
+- Make API calls async await
 - Unit, snapshot, e2e testing

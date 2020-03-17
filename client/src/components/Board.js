@@ -16,8 +16,8 @@ class Board extends Component {
                     </Consumer>
                     <Consumer>
                         {value => {
-                            const { buildNotes } = value
-                            return < Column stage="BUILD" notes={buildNotes}></Column>
+                            const { doingNotes } = value
+                            return < Column stage="DOING" notes={doingNotes}></Column>
                         }}
                     </Consumer>
                     <Consumer>

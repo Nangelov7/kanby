@@ -8,7 +8,7 @@ export class Provider extends Component {
 
     state = {
         todoNotes: [],
-        buildNotes: [],
+        doingNotes: [],
         fixNotes: [],
         testNotes: [],
         doneNotes: []
@@ -23,9 +23,9 @@ export class Provider extends Component {
             this.setState({ todoNotes:  res.data })
         })
         // .catch(err => console.log(err))
-        axios.get(`${url}/build`)
+        axios.get(`${url}/doing`)
         .then(res => {
-            this.setState({ buildNotes: res.data })
+            this.setState({ doingNotes: res.data })
         })
         //.catch(err => {})
         axios.get(`${url}/fix`)
