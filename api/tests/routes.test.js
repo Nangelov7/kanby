@@ -2,38 +2,43 @@ const app = require('../server')
 const db = require('../config/db')
 const supertest = require('supertest')
 
-describe('Check if all methods of /todo endpoint are working properly', () => {
-    it('Check if status code of GET request to /todo endpoint is 200', async () => {
+describe('Test /todo endpoint', () => {
+    it('GET request', async () => {
         const res = await supertest(app.server).get('/todo')
-        expect(res.status).toBe(200 || 304)
+            .expect('Content-Type', /json/)
+            .expect(200)
     })
 })
 
-describe('Check if all methods of /doing endpoint are working properly', () => {
-    it('Check if status code of GET request to /doing endpoint is 200', async () => {
+describe('Test /doing endpoint', () => {
+    it('GET request', async () => {
         const res = await supertest(app.server).get('/doing')
-        expect(res.status).toBe(200 || 304)
+            .expect('Content-Type', /json/)
+            .expect(200)
     })
 })
 
-describe('Check if all methods of /fix endpoint are working properly', () => {
-    it('Check if status code of GET request to /fix endpoint is 200', async () => {
+describe('Test /fix endpoint', () => {
+    it('GET request', async () => {
         const res = await supertest(app.server).get('/fix')
-        expect(res.status).toBe(200 || 304)
+            .expect('Content-Type', /json/)
+            .expect(200)
     })
 })
 
-describe('Check if all methods of /test endpoint are working properly', () => {
-    it('Check if status code of GET request to /test endpoint is 200', async () => {
+describe('Test /test endpoint', () => {
+    it('GET request', async () => {
         const res = await supertest(app.server).get('/test')
-        expect(res.status).toBe(200 || 304)
+            .expect('Content-Type', /json/)
+            .expect(200)
     })
 })
 
-describe('Check if all methods of /done endpoint are working properly', () => {
-    it('Check if status code of GET request to /done endpoint is 200', async () => {
+describe('Test /done endpoint', () => {
+    it('GET request', async () => {
         const res = await supertest(app.server).get('/done')
-        expect(res.status).toBe(200 || 304)
+            .expect('Content-Type', /json/)
+            .expect(200)
     })
 })
 
