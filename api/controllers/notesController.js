@@ -10,7 +10,7 @@ exports.getNotes = (stage) => {
             })
             .catch(err => {
                 res.status(500).json(err)
-            })
+			})
     }
 }
 
@@ -29,7 +29,7 @@ exports.createNote = (stage) => {
                 res.status(200).json(note)
             }).catch(err => {
                 res.status(500).json(err)
-            })
+			})
     }
 }
 
@@ -45,7 +45,7 @@ exports.updateNote = (req, res) => {
                 res.status(200).json(note)
             }).catch(err => {
                 res.status(500).json(err)
-            })
+			})
     }
 }
 

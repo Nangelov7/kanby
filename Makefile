@@ -1,24 +1,25 @@
 API_NAME=kanban_api:latest
 CLIENT_NAME=kanban_client:latest
+DB_NAME=kanban_db:latest
 
 all: build up
 
 clean: down rmi
 
 build:
-	sudo docker-compose build
+	docker-compose build
 
 up:
-	sudo docker-compose up
+	docker-compose up
 
 down:
-	sudo docker-compose down
+	docker-compose down
 
 stop:
-	sudo docker-compose stop
+	docker-compose stop
 
 rmi:
-	sudo docker rmi $(API_NAME) $(CLIENT_NAME)
+	docker rmi $(API_NAME) $(CLIENT_NAME) $(DB_NAME)
 
 help:
 	@echo '-------------------------------------------------------------'

@@ -1,7 +1,7 @@
 FROM node
-WORKDIR /client
-COPY ["package.json", "yarn.lock", "client/"]
+WORKDIR /usr/src/client
+COPY ["package.json", "yarn.lock", "./"]
 RUN yarn install
-COPY . client/
+COPY . .
 EXPOSE 3000
 CMD ["yarn", "start"]

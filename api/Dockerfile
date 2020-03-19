@@ -1,7 +1,7 @@
 FROM node
-WORKDIR /api
-COPY ["package.json", "yarn.lock", "api/"]
+WORKDIR /usr/src/api
+COPY ["package.json", "yarn.lock", "./"]
 RUN yarn install
-COPY . api/
+COPY . .
 EXPOSE 4000
 CMD ["yarn", "start"]

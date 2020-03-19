@@ -2,5 +2,6 @@ node_modules/
 coverage/
 build/
 css/
+db/
 *.log
 .env
