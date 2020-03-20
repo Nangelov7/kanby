@@ -6,6 +6,15 @@ all: build up
 
 clean: down rmi
 
+install: deps gulp build up
+
+deps:
+	cd ./api && yarn
+	cd ./client && yarn
+
+gulp:
+	cd ./client && gulp
+
 build:
 	docker-compose build
 
@@ -22,13 +31,16 @@ rmi:
 	docker rmi $(API_NAME) $(CLIENT_NAME) $(DB_NAME)
 
 help:
-	@echo '-------------------------------------------------------------'
-	@echo '| help		shows helpful information                   |'
-	@echo '| all		builds and starts all docker containers     |'
-	@echo '| clean		stops all containers and removes all images |'
-	@echo '| build		builds all docker images                    |'
-	@echo '| up     	starts all docker containers                |'
-	@echo '| down		stops and removes all docker containers     |'
-	@echo '| stop		stops all docker containers                 |'
-	@echo '| rmi		removes all docker images                   |'
-	@echo '-------------------------------------------------------------'
+	@echo '-----------------------------------------------------------'
+	@echo '| help		show helpful information                  |'
+	@echo '| all		build and start all docker containers     |'
+	@echo '| clean		stop all containers and remove all images |'
+	@echo '| install	complete installation process             |'
+	@echo '| deps		install all necessary dependencies        |'
+	@echo '| gulp		run all gulp tasks                        |'
+	@echo '| build		build all docker images                   |'
+	@echo '| up     	start all docker containers               |'
+	@echo '| down		stop and remove all docker containers     |'
+	@echo '| stop		stop all docker containers                |'
+	@echo '| rmi		remove all docker images                  |'
+	@echo '-----------------------------------------------------------'
