@@ -6,6 +6,9 @@ node_js:
     - 10
     - 8
 services:
-    - docker
-    - mongodb
-install: yarn install
+	- docker
+addons:
+  apt:
+    packages:
+      - docker-ce
+install: yarn

@@ -2,6 +2,7 @@
 import React, { Component } from 'react'
 import axios from 'axios'
 
+const API_PORT = 4000
 const Context = React.createContext()
 
 export class Provider extends Component {
@@ -16,7 +17,7 @@ export class Provider extends Component {
 
     componentDidMount() {
 
-        const url = 'http://localhost:4000'
+        const url = `http://localhost:${API_PORT}`
 
         axios.get(`${url}/todo`)
         .then(res => {

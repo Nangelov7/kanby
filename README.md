@@ -1,5 +1,5 @@
 # Kanban Board
-Provides an easy way to manage your projects. The application is built by using MERN stack and Docker.
+The application is built by using MERN stack and Docker.
 
 ## Getting Started
 Clone the repository:
@@ -22,7 +22,7 @@ $ yarn global add gulp
 ```
 
 ### Installing
-Rename .env.example files to .env (located in the root directory of the project and api) and set the environment variables.
+Rename .env.example file to .env (located in the api folder) and set the environment variables.
 
 Go to the root directory of the project and run this from the terminal:
 ```bash
@@ -38,4 +38,4 @@ $ make help
 * **Nikolay Angelov**
 
 ## License
-This project is licensed under the [GPL-3.0](https://choosealicense.com/licenses/gpl-3.0/) License - see the LICENSE.md file for details
+This project is licensed under the [GPL-3.0](https://choosealicense.com/licenses/gpl-3.0/) License - see the [LICENSE.md](https://github.com/Nangelov7/kanban-board/blob/master/LICENSE) file for details

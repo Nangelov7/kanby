@@ -5,7 +5,7 @@ services:
         build: ./api
         restart: always
         ports:
-            - "${API_PORT}:4000"
+            - "4000:4000"
         volumes:
             - ./api:/api
             - /api/node_modules
@@ -18,7 +18,7 @@ services:
         build: ./client
         restart: always
         ports:
-            - "${CLIENT_PORT}:3000"
+            - "3000:3000"
         volumes:
             - ./client:/client
             - /client/node_modules
@@ -30,7 +30,5 @@ services:
         container_name: kanban-db
         image: mongo
         restart: always
-        ports:
-            - "${DB_PORT}:27017"
         volumes:
             - ./db:/data/db
