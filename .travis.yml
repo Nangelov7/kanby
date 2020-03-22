@@ -1,14 +1,29 @@
 sudo: required
 language: node_js
 node_js:
-    - lts/*
-    - node
-    - 10
-    - 8
+	- node
+	- lts/*
+	- 10
+	- 8
 services:
 	- docker
-addons:
-  apt:
-    packages:
-      - docker-ce
+env:
+  - DOCKER_COMPOSE_VERSION=1.4.2
+before_install:
+  - sudo rm /usr/local/bin/docker-compose
+  - curl -L https://github.com/docker/compose/releases/download/${DOCKER_COMPOSE_VERSION}/docker-compose-`uname -s`-`uname -m` > docker-compose
+  - chmod +x docker-compose
+	- sudo mv docker-compose /usr/local/bin
 install: yarn
+cache: yarn
+before_script:
+	- docker-compose up -d --build
+script:
+  - make test
+after_script:
+  - make down
+on:
+	branch: master
+branches:
+  only:
+  - master

@@ -1,5 +1,7 @@
+[![Build Status](https://travis-ci.org/Nangelov7/kanban-board.svg?branch=master)](https://travis-ci.org/Nangelov7/kanban-board)
+[![tested with jest](https://img.shields.io/badge/tested_with-jest-99424f.svg)](https://github.com/facebook/jest)
 # Kanban Board
-The application is built by using MERN stack and Docker.
+>The application is built by using MERN stack and Docker.
 
 ## Getting Started
 Clone the repository:
@@ -33,6 +35,9 @@ For more options run:
 ```bash
 $ make help
 ```
+
+Open your browser and go to:
+> http://localhost:3000
 
 ## Authors
 * **Nikolay Angelov**

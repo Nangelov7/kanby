@@ -15,6 +15,10 @@ deps:
 gulp:
 	cd ./client && gulp
 
+test:
+	docker exec -it kanban-api yarn test
+	cd ./client && yarn test
+
 build:
 	docker-compose build
 
@@ -38,6 +42,7 @@ help:
 	@echo '| install	complete installation process             |'
 	@echo '| deps		install all necessary dependencies        |'
 	@echo '| gulp		run all gulp tasks                        |'
+	@echo '| gulp		run all tests inside a docker container   |'
 	@echo '| build		build all docker images                   |'
 	@echo '| up     	start all docker containers               |'
 	@echo '| down		stop and remove all docker containers     |'
