@@ -25,8 +25,6 @@ script:
   - make test
 after_script:
   - make down
-on:
-  branch: master
 branches:
   only:
     - master
