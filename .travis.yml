@@ -1,11 +1,13 @@
 os: linux
 dist: trusty
+language: python
+python:
+  - "3.6"
 services:
   - docker
 install:
-  - docker version
-  - sudo pip install docker-compose
-  - docker-compose version
+  - pip install --upgrade pip
+  - pip install docker-compose
 before_script:
   - make start
 script:
