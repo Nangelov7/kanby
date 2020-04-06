@@ -1,12 +1,12 @@
-[![Build Status](https://travis-ci.org/Nangelov7/kanban-board.svg?branch=master)](https://travis-ci.org/Nangelov7/kanban-board)
+[![Build Status](https://travis-ci.org/Nangelov7/kanban-board.svg?branch=master)](https://travis-ci.org/Nangelov7/kanby)
 [![tested with jest](https://img.shields.io/badge/tested_with-jest-99424f.svg)](https://github.com/facebook/jest)
-# Kanban Board
+# Kanby
 >The application is built by using MERN stack and Docker.
 
 ## Getting Started
 Clone the repository:
 ```bash
-$ git clone https://github.com/Nangelov7/kanban-board.git
+$ git clone https://github.com/Nangelov7/kanby.git
 ```
 
 ### Prerequisites
@@ -43,4 +43,4 @@ Open your browser and go to:
 * **Nikolay Angelov**
 
 ## License
-This project is licensed under the [GPL-3.0](https://choosealicense.com/licenses/gpl-3.0/) License - see the [LICENSE.md](https://github.com/Nangelov7/kanban-board/blob/master/LICENSE) file for details
+This project is licensed under the [GPL-3.0](https://choosealicense.com/licenses/gpl-3.0/) License - see the [LICENSE.md](https://github.com/Nangelov7/kanby/blob/master/LICENSE) file for details

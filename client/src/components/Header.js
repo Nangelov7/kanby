@@ -6,7 +6,7 @@ class Header extends PureComponent {
         return (
             <>
                 <div className="header">
-                    <h1>KANBAN BOARD</h1>
+                    <h1>KANBY</h1>
                 </div>
             </>
         )

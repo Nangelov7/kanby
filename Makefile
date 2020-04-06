@@ -1,6 +1,6 @@
-API_NAME=kanban_api:latest
-CLIENT_NAME=kanban_client:latest
-DB_NAME=kanban_db:latest
+API_NAME=kanby_api:latest
+CLIENT_NAME=kanby_client:latest
+DB_NAME=kanby_db:latest
 
 install: deps gulp build up
 
@@ -12,7 +12,7 @@ gulp:
 	cd ./client && gulp
 
 test:
-	docker exec -it kanban-api yarn test
+	docker exec -it kanby-api yarn test
 	# cd ./client && yarn test
 
 build:
@@ -36,7 +36,6 @@ rmi:
 help:
 	@echo '-----------------------------------------------------------'
 	@echo '| help		show helpful information                  |'
-	@echo '| clean		stop all containers and remove all images |'
 	@echo '| install	complete installation process             |'
 	@echo '| deps		install all necessary dependencies        |'
 	@echo '| gulp		run all gulp tasks                        |'

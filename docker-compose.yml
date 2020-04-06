@@ -1,7 +1,7 @@
 version: "3.3"
 services:
     api:
-        container_name: kanban-api
+        container_name: kanby-api
         build: ./api
         restart: always
         ports:
@@ -14,7 +14,7 @@ services:
         depends_on:
             - db
     client:
-        container_name: kanban-client
+        container_name: kanby-client
         build: ./client
         restart: always
         ports:
@@ -27,7 +27,7 @@ services:
         depends_on:
             - api
     db:
-        container_name: kanban-db
+        container_name: kanby-db
         image: mongo
         restart: always
         volumes:
