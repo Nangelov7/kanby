@@ -4,7 +4,7 @@ const stage = 'done'
 
 router.get(`/${stage}`, notesController.getNotes(stage))
 
-router.post(`/${stage}`, notesController.updateNote(stage))
+router.post(`/${stage}`, notesController.createNote(stage))
 
 router.put(`/${stage}/:id`, notesController.updateNote())
 

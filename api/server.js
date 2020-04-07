@@ -1,5 +1,6 @@
 const app = require('./app')
+require('./config/db')
 const PORT = 4000
 
 // Server
-exports.server = app.listen(PORT, () => console.log(`API is running on port ${PORT}!`))
+app.listen(PORT, () => console.log(`API is running on port ${PORT}!`))
