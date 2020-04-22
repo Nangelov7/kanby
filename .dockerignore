@@ -1,4 +1,5 @@
 docker-compose.yml
+node_modules/
 coverage/
 sass/
 *.log
