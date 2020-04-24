@@ -13,7 +13,7 @@ app.use('/', doingRoute)
 app.use('/', fixRoute)
 app.use('/', testRoute)
 app.use('/', doneRoute)
-app.use('/', (req, res, next) => {
+app.use('/', (req, res) => {
     res.status(404).json({error: 'Not found'})
 })
 

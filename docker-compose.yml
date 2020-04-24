@@ -9,6 +9,10 @@ services:
         volumes:
             - ./api:/api
             - /api/node_modules
+        environment:
+            - DEV_DB_URI=${DEV_DB_URI}
+            - TEST_DB_URI=${TEST_DB_URI}
+            - PROD_DB_URI=${PROD_DB_URI}
         links:
             - db
         depends_on:
@@ -30,5 +34,7 @@ services:
         container_name: kanby-db
         image: mongo
         restart: always
+        ports:
+            - "27017:27017"
         volumes:
             - ./db:/data/db

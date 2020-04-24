@@ -2,7 +2,7 @@ os: linux
 dist: trusty
 language: python
 python:
-  - "3.6"
+  - '3.6'
 services:
   - docker
 install:
@@ -14,3 +14,7 @@ script:
   - make test
 after_script:
   - make down
+env:
+  global:
+    - secure: B1W9OYxRrrX0eo2cIqjFIAvGpDns4JGi4IsVWGUlDDppebauHHAycQQ4TYVRtt83SHlAveFMgLD+XgtQiONUubl19rZKKkYExQ6Ka8Agnt4grMUbQH6ZkDqg68VlGnZ6or2JMbzPv+vDyySM6fBnE520pjAEjgun7BLN9JP8Kee+3TAARXXj531Mnwi9+/E1uVE5xLSVnEcMOEP6kuehQmlQxLH3SMrPLVfQVDVNIiN88vqmVTDProb7k9XYz+a2f3+dKnwRLEyfDNX+XShPo75NQMOoH4qPIZ3UpWXEjKjpvBz3imRWdfrb//j1oOoKWMLKPPFkuFcjAvdaQ3hfU5O8oJ/wUdL/CpfPj2WlhDxpH1kvn7jcGzuCXiAfyoVjAFiRZzt/OVrbVSHcs45cIar2R+kDP1SpeZAjeiqwubfUlke2V+W0w6d2cn6WIX15buV7bFHJuje5ytAtyXcmeJUBZJO4vioZKcEfI1w7ToVtczZ9Kiu93nW+D9ZO7sWI4cUJxlMZElCkwNn1kDep1eGspT+92SZ4W1dGfHl1zrFQQyXdg1uBwAC4gXOBAMp7YYBOhHN92q5sNn+WhAFNTuVezBf173+AjE8rv+6BxDZwmLxQfk1FH+Y00KVmP3ojAfQ3fyk/xS4zGJnJ5g725WQmm/sQRvmKPId9J3nHH4w=
+    - secure: Mlr/iLmAxbXZmG0lShE5P0wJMD9i5VnytTelaqIWIk0CBlFs+6cnNMT7McjHLM4DuNZucYD6IJ3iE0BntFPyZTzPkQbi240OEo0evcEhzcwXD0MNquTqzoKbOXZeuZWCieKxYAsHWZ2izGakyxC0X0sue4gsW8K01vIVEJlOZHSDCLD7WeRJtdHWhJTc1DxLknZfjYFG03+g7iatMqnoZpOfJuC4SwVcugLdIhMVH2h3iPSnmnj/3jBoiGMWMa9mQOPWFcC/53TV51jqur4jkdKS/4h4y7mwZuEA9MduTnbnDxjCw7flHDrHqK+RsegSxpqj7rcoFhWyyO/N+9gobOBbZmoI+H405E1BCWlpmfD7m4RYz3V5T3UIFJuugjFoX7hScXXVgSyPCMlamJ6uqg+13Zs44Y+g626Z4V8z8yayQAmwDCntPvUyETHdj59G+nuZ8bgpUK/k2XZk/rLiW2+z1hLzTv9nNNn4EyY2ND+/TcTlwui+2YDWeo0XLkc0jGnaLIaI1LmjL+orysNH60ZuF5ivRArcBLPXqJ1H+6eL1nW+PHumEdPqVkfiMqgotR4RjmoJ7FEDXweIKTYGOx7TLcB/UnoxwDBemYKFKfHV+G7PurL9GRyy/pj8s3AwSrtj+hpDKtoZ0tiZ3NkzqgD0J99TWH6KerExK7pwuP0=

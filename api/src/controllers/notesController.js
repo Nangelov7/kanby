@@ -33,7 +33,7 @@ exports.createNote = (stage) => {
     }
 }
 
-exports.updateNote = (req, res) => {
+exports.updateNote = () => {
     return (req, res) => {
         let id = req.params.id
         let text = req.body.text

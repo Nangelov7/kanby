@@ -2,17 +2,11 @@ const app = require('../app')
 const mongoose = require('mongoose')
 const supertest = require('supertest')
 const Note = require('../models/Note')
+const db = require('../config/db')
 
 // Database setup
 beforeAll(async () => {
-	const DB_HOST = 'db'
-	const DB_PORT = 27017
-	const DB_TEST_DATABASE = 'kanby_test'
-
-	await mongoose.connect(`mongodb://${DB_HOST}:${DB_PORT}/${DB_TEST_DATABASE}`, {
-		useNewUrlParser: true, useUnifiedTopology: true,
-		useFindAndModify: false, useCreateIndex: true
-	})
+	await db.init()
 })
 
 // Cleaning the database between each test
@@ -28,13 +22,13 @@ afterAll(async () => {
 
 describe('Test /todo endpoint', () => {
     it('GET request', async () => {
-        const res = await supertest(app).get('/todo')
+        await supertest(app).get('/todo')
             .expect('Content-Type', /json/)
 			.expect(200)
 	})
 
 	it('POST request', async () => {
-		const res = await supertest(app).post('/todo')
+		await supertest(app).post('/todo')
 			.send({
 				text: 'New feature',
 				priority: 'low'
@@ -47,13 +41,13 @@ describe('Test /todo endpoint', () => {
 
 describe('Test /doing endpoint', () => {
     it('GET request', async () => {
-        const res = await supertest(app).get('/doing')
+        await supertest(app).get('/doing')
             .expect('Content-Type', /json/)
 			.expect(200)
 	})
 
 	it('POST request', async () => {
-		const res = await supertest(app).post('/doing')
+		await supertest(app).post('/doing')
 			.send({
 				text: 'Login system',
 				priority: 'high'
@@ -66,13 +60,13 @@ describe('Test /doing endpoint', () => {
 
 describe('Test /fix endpoint', () => {
     it('GET request', async () => {
-        const res = await supertest(app).get('/fix')
+        await supertest(app).get('/fix')
             .expect('Content-Type', /json/)
 			.expect(200)
 	})
 
 	it('POST request', async () => {
-		const res = await supertest(app).post('/fix')
+		await supertest(app).post('/fix')
 			.send({
 				text: 'Upload picture',
 				priority: 'medium'
@@ -85,13 +79,13 @@ describe('Test /fix endpoint', () => {
 
 describe('Test /test endpoint', () => {
     it('GET request', async () => {
-        const res = await supertest(app).get('/test')
+        await supertest(app).get('/test')
             .expect('Content-Type', /json/)
 			.expect(200)
 	})
 
 	it('POST request', async () => {
-		const res = await supertest(app).post('/test')
+		await supertest(app).post('/test')
 			.send({
 				text: 'Test endpoints',
 				priority: 'high'
@@ -104,13 +98,13 @@ describe('Test /test endpoint', () => {
 
 describe('Test /done endpoint', () => {
     it('GET request', async () => {
-        const res = await supertest(app).get('/done')
+        await supertest(app).get('/done')
             .expect('Content-Type', /json/)
 			.expect(200)
 	})
 
 	it('POST request', async () => {
-		const res = await supertest(app).post('/done')
+		await supertest(app).post('/done')
 			.send({
 				text: 'DB connection',
 				priority: 'medium'

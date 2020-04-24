@@ -1,0 +1,10 @@
+!.env
+
+node_modules/
+coverage/
+sass/
+Dockerfile
+Gulpfile.js
+webpack.config.js
+npm-debug.log
+.*
