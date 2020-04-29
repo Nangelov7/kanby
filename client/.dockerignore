@@ -1,11 +1,8 @@
-!.env
-
 node_modules/
 coverage/
 build/
 sass/
-Dockerfile
+Dockerfile*
 Gulpfile.js
-webpack.config.js
 npm-debug.log
 .*

@@ -2,7 +2,7 @@ API_NAME=kanby_api:latest
 CLIENT_NAME=kanby_client:latest
 DB_NAME=kanby_db:latest
 
-install: deps gulp build up
+install: deps gulp prod
 
 deps:
 	cd ./api && yarn
@@ -21,7 +21,10 @@ build:
 up:
 	docker-compose up
 
-start:
+prod:
+	docker-compose -f docker-compose.prod.yml up -d --build
+
+dev:
 	docker-compose up -d --build
 
 down:
@@ -42,7 +45,8 @@ help:
 	@echo '| test		run all tests inside a docker container   |'
 	@echo '| build		build all docker images                   |'
 	@echo '| up     	start all docker containers               |'
-	@echo '| start		build and start all docker containers     |'
+	@echo '| prod		build and start production containers     |'
+	@echo '| dev		build and start development containers    |'
 	@echo '| down		stop and remove all docker containers     |'
 	@echo '| stop		stop all docker containers                |'
 	@echo '| rmi		remove all docker images                  |'

@@ -1,7 +1,7 @@
 node_modules/
 coverage/
 build/
-Dockerfile
+Dockerfile*
 webpack.config.js
 npm-debug.log
 .*

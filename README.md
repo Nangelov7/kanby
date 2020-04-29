@@ -1,5 +1,6 @@
 [![Build Status](https://travis-ci.com/Nangelov7/kanby.svg?branch=master)](https://travis-ci.com/Nangelov7/kanby)
 [![tested with jest](https://img.shields.io/badge/tested_with-jest-99424f.svg)](https://github.com/facebook/jest)
+[![StackShare](https://img.shields.io/badge/tech-stack-0690fa.svg?style=flat)](https://stackshare.io/Nangelov7/kanby)
 # Kanby
 >The application is built by using MERN stack and Docker.
 
