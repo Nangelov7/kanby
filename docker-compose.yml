@@ -28,8 +28,10 @@ services:
             - /client/node_modules
         links:
             - api
+            - server
         depends_on:
             - api
+            - server
     db:
         container_name: kanby-db
         image: mongo
@@ -38,3 +40,12 @@ services:
             - "27017:27017"
         volumes:
             - ./db:/data/db
+    server:
+        container_name: kanby-server
+        build:
+            context: ./client
+            dockerfile: Dockerfile.prod
+        restart: always
+        ports:
+            - "80:80"
+            - "443:443"

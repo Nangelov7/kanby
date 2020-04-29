@@ -24,9 +24,9 @@ $ yarn global add gulp
 ```
 
 ### Installing
-Rename .env.example file to .env (located in the api folder) and set the environment variables.
-
-Go to the root directory of the project and run this from the terminal:
+1. Go to the root directory of the project.
+2. Rename .env.example file to .env and set the environment variables.
+3.  Run this from the terminal:
 ```bash
 $ make install
 ```
@@ -37,7 +37,7 @@ $ make help
 ```
 
 Open your browser and go to:
-> http://localhost:3000
+> http://localhost
 
 ## Authors
 * **Nikolay Angelov**
