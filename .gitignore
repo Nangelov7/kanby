@@ -3,5 +3,5 @@ coverage/
 build/
 css/
 db/
-npm-debug.log
+*.log
 .env

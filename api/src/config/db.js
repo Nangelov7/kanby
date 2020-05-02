@@ -6,11 +6,11 @@ exports.init = () => {
 	const ENV = process.env.NODE_ENV
 	let DB_URI
 
-	if (ENV == 'development') {
+	if (ENV === 'development') {
 		DB_URI = process.env.DEV_DB_URI
-	} else if (ENV == 'test') {
+	} else if (ENV === 'test') {
 		DB_URI = process.env.TEST_DB_URI
-	} else if (ENV == 'production') {
+	} else if (ENV === 'production') {
 		DB_URI = process.env.PROD_DB_URI
 	}
 

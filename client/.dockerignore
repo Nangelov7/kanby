@@ -4,5 +4,5 @@ build/
 sass/
 Dockerfile*
 Gulpfile.js
-npm-debug.log
+*.log
 .*

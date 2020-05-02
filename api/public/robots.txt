@@ -1,7 +1,0 @@
-User-agent: *
-Disallow: /
-Disallow: /todo
-Disallow: /doing
-Disallow: /fix
-Disallow: /test
-Disallow: /done

@@ -1,0 +1,14 @@
+FROM node as prod
+WORKDIR /api
+COPY ["package.json", "yarn.lock", "./"]
+RUN yarn
+COPY . .
+RUN yarn build
+
+FROM node
+WORKDIR /api
+COPY ["package.json", "yarn.lock", "./"]
+RUN yarn
+COPY --from=prod /api/build ./build
+EXPOSE 4000
+CMD ["yarn", "prod"]
