@@ -20,6 +20,25 @@ afterAll(async () => {
 	await mongoose.connection.close()
 })
 
+describe('Test /backlog endpoint', () => {
+	it('GET request', async () => {
+		await supertest(app).get('/backlog')
+			.expect('Content-Type', /json/)
+			.expect(200)
+	})
+
+	it('POST request', async () => {
+		await supertest(app).post('/backlog')
+			.send({
+				text: 'Upload picture',
+				priority: 'medium'
+			})
+		const note = await Note.findOne({ text: 'Upload picture' })
+		expect(note.text).toBe('Upload picture')
+		expect(note.priority).toBe('medium')
+	})
+})
+
 describe('Test /todo endpoint', () => {
     it('GET request', async () => {
         await supertest(app).get('/todo')
@@ -58,40 +77,21 @@ describe('Test /doing endpoint', () => {
 	})
 })
 
-describe('Test /fix endpoint', () => {
+describe('Test /review endpoint', () => {
     it('GET request', async () => {
-        await supertest(app).get('/fix')
+        await supertest(app).get('/review')
             .expect('Content-Type', /json/)
 			.expect(200)
 	})
 
 	it('POST request', async () => {
-		await supertest(app).post('/fix')
+		await supertest(app).post('/review')
 			.send({
-				text: 'Upload picture',
-				priority: 'medium'
-			})
-		const note = await Note.findOne({ text: 'Upload picture' })
-		expect(note.text).toBe('Upload picture')
-		expect(note.priority).toBe('medium')
-	})
-})
-
-describe('Test /test endpoint', () => {
-    it('GET request', async () => {
-        await supertest(app).get('/test')
-            .expect('Content-Type', /json/)
-			.expect(200)
-	})
-
-	it('POST request', async () => {
-		await supertest(app).post('/test')
-			.send({
-				text: 'Test endpoints',
+				text: 'Payment system',
 				priority: 'high'
 			})
-		const note = await Note.findOne({ text: 'Test endpoints' })
-		expect(note.text).toBe('Test endpoints')
+		const note = await Note.findOne({ text: 'Payment system' })
+		expect(note.text).toBe('Payment system')
 		expect(note.priority).toBe('high')
 	})
 })

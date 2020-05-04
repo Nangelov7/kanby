@@ -1,6 +1,6 @@
 const router = require('express').Router()
 const notesController = require('../controllers/notesController')
-const stage = 'fix'
+const stage = 'review'
 
 router.get(`/${stage}`, notesController.getNotes(stage))
 

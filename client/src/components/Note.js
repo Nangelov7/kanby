@@ -1,4 +1,3 @@
-/* eslint-disable no-loop-func */
 import React, { Component } from 'react'
 import '../assets/styles/css/components/note.css'
 import deleteIcon from '../assets/images/delete.png'

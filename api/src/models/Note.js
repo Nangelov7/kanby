@@ -13,7 +13,7 @@ const NoteSchema = new mongoose.Schema({
         type: String,
         required: true,
         trim: true,
-        enum: ['todo', 'doing', 'fix', 'test', 'done']
+		enum: ['backlog', 'todo', 'doing', 'review', 'done']
     },
     priority: {
         type: String,

@@ -8,6 +8,12 @@ class Board extends Component {
         return (
             <>
                 <div className="board">
+					<Consumer>
+						{value => {
+							const { backlogNotes } = value
+							return <Column stage="BACKLOG" notes={backlogNotes}></Column>
+						}}
+					</Consumer>
                     <Consumer>
                         {value => {
                             const { todoNotes } = value
@@ -22,14 +28,8 @@ class Board extends Component {
                     </Consumer>
                     <Consumer>
                         {value => {
-                            const { fixNotes } = value
-                            return <Column stage="FIX" notes={fixNotes}></Column> 
-                        }}
-                    </Consumer>
-                    <Consumer>
-                        {value => {
-                            const { testNotes } = value
-                            return <Column stage="TEST" notes={testNotes}></Column>
+                            const { reviewNotes } = value
+                            return <Column stage="REVIEW" notes={reviewNotes}></Column>
                         }}
                     </Consumer>
                     <Consumer>

@@ -7,10 +7,10 @@ const Context = React.createContext()
 export class Provider extends Component {
 
     state = {
+		backlogNotes: [],
         todoNotes: [],
         doingNotes: [],
-        fixNotes: [],
-        testNotes: [],
+        reviewNotes: [],
         doneNotes: []
     }
 
@@ -18,6 +18,11 @@ export class Provider extends Component {
 
         const url = `http://localhost:${API_PORT}`
 
+		axios.get(`${url}/backlog`)
+		.then(res => {
+			this.setState({ backlogNotes: res.data })
+		})
+        //.catch(err => {})
         axios.get(`${url}/todo`)
         .then(res => {
             this.setState({ todoNotes:  res.data })
@@ -28,14 +33,9 @@ export class Provider extends Component {
             this.setState({ doingNotes: res.data })
         })
         //.catch(err => {})
-        axios.get(`${url}/fix`)
+        axios.get(`${url}/review`)
         .then(res => {
-            this.setState({ fixNotes: res.data })
-        })
-        //.catch(err => {})
-        axios.get(`${url}/test`)
-        .then(res => {
-            this.setState({ testNotes: res.data })
+            this.setState({ reviewNotes: res.data })
         })
         //.catch(err => {})
         axios.get(`${url}/done`)
