@@ -1,11 +1,12 @@
-FROM node as prod
+FROM node:12.16-alpine as prod
 WORKDIR /api
 COPY ["package.json", "yarn.lock", "./"]
 RUN yarn
 COPY . .
 RUN yarn build
 
-FROM node
+FROM node:12.16-alpine
+RUN apk add --no-cache bash
 WORKDIR /api
 COPY ["package.json", "yarn.lock", "./"]
 RUN yarn
