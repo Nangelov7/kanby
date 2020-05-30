@@ -1,0 +1,12 @@
+{
+    "name": "kanbyapp",
+    "description": "Project management software",
+    "repository": "https://github.com/Nangelov7/kanby.git",
+    "success_url": "/",
+    "stack": "container",
+    "buildpacks": [
+        {
+            "url": "heroku/nodejs"
+        }
+    ]
+}

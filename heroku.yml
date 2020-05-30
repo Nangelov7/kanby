@@ -1,5 +1,8 @@
+setup:
+    config:
+        PROD_DB_URI: ${PROD_DB_URI}
 build:
     docker:
-        web: api/Dockerfile
+        web: api/Dockerfile.prod
 run:
     web: yarn start
