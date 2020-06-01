@@ -36,18 +36,25 @@ stop:
 rmi:
 	docker rmi $(API_NAME) $(CLIENT_NAME) $(DB_NAME)
 
+setup_heroku:
+	curl -n -X POST https://api.heroku.com/app-setups \
+		-d '{"source_blob": { "url":"https://github.com/nangelov7/kanby/tarball/master/"} }' \
+		-H "Content-Type: application/json" \
+		-H "Accept: application/vnd.heroku+json; version=3"
+
 help:
-	@echo '-----------------------------------------------------------'
-	@echo '| help		show helpful information                  |'
-	@echo '| install	complete installation process             |'
-	@echo '| deps		install all necessary dependencies        |'
-	@echo '| gulp		run all gulp tasks                        |'
-	@echo '| test		run all tests inside a docker container   |'
-	@echo '| build		build all docker images                   |'
-	@echo '| up     	start all docker containers               |'
-	@echo '| prod		build and start production containers     |'
-	@echo '| dev		build and start development containers    |'
-	@echo '| down		stop and remove all docker containers     |'
-	@echo '| stop		stop all docker containers                |'
-	@echo '| rmi		remove all docker images                  |'
-	@echo '-----------------------------------------------------------'
+	@echo '-------------------------------------------------------------------------------------------'
+	@echo '| help						show helpful information                  |'
+	@echo '| install					complete installation process             |'
+	@echo '| deps						install all necessary dependencies        |'
+	@echo '| gulp						run all gulp tasks                        |'
+	@echo '| test						run all tests inside a docker container   |'
+	@echo '| build						build all docker images                   |'
+	@echo '| up     					start all docker containers               |'
+	@echo '| prod						build and start production containers     |'
+	@echo '| dev						build and start development containers    |'
+	@echo '| down						stop and remove all docker containers     |'
+	@echo '| stop						stop all docker containers                |'
+	@echo '| rmi						remove all docker images                  |'
+	@echo '| setup_heroku					integrate with heroku          		  |'
+	@echo '-------------------------------------------------------------------------------------------'
