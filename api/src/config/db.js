@@ -1,11 +1,10 @@
 const mongoose = require('mongoose')
 require('dotenv').config()
 
+const ENV = process.env.NODE_ENV
+let DB_URI
+
 exports.init = () => {
-
-	const ENV = process.env.NODE_ENV
-	let DB_URI
-
 	if (ENV === 'development') {
 		DB_URI = process.env.DEV_DB_URI
 	} else if (ENV === 'test') {

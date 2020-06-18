@@ -12,10 +12,13 @@ services:
         environment:
             - DEV_DB_URI=${DEV_DB_URI}
             - TEST_DB_URI=${TEST_DB_URI}
+            - REDIS_URL=${REDIS_URL}
         links:
             - db
+            - cache
         depends_on:
             - db
+            - cache
     client:
         container_name: kanby-client
         build: ./client
@@ -35,3 +38,7 @@ services:
         restart: always
         volumes:
             - ./db:/data/db
+    cache:
+        container_name: kanby-cache
+        image: redis:6.0.5-alpine
+        restart: always

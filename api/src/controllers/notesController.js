@@ -1,16 +1,23 @@
 const mongoose = require('mongoose')
 const Note = require('../models/Note')
+const cache = require('../config/cache')
 
 exports.getNotes = (stage) => {
-    return (req, res) => {
-        Note.find({ stage: stage }).select('-__v -stage')
-            .exec()
-            .then(notes => {
-                res.status(200).json(notes)
-            })
-            .catch(err => {
-                res.status(500).json(err)
-			})
+    return async (req, res) => {
+		if(await cache.exists(stage)) {
+			let cached_data = await cache.get(stage)
+			await res.status(304).json(JSON.parse(cached_data))
+		} else {
+			Note.find({ stage: stage }).select('-__v -stage')
+				.exec()
+				.then(async notes => {
+					await cache.set(stage, JSON.stringify(notes))
+					await res.status(200).json(notes)
+				})
+				.catch(async err => {
+					await res.status(500).json(err)
+				})
+		}
     }
 }
 
@@ -25,10 +32,13 @@ exports.createNote = (stage) => {
             priority: priority
         })
         newNote.save()
-            .then(note => {
-                res.status(200).json(note)
-            }).catch(err => {
-                res.status(500).json(err)
+            .then(async note => {
+				if(await cache.exists(stage)) {
+					await cache.del(stage)
+				}
+                await res.status(200).json(note)
+            }).catch(async err => {
+                await res.status(500).json(err)
 			})
     }
 }
@@ -41,10 +51,13 @@ exports.updateNote = () => {
         let priority = req.body.priority
         Note.findOneAndUpdate({ _id: id }, { text: text, stage: stage, priority: priority })
             .exec()
-            .then(note => {
-                res.status(200).json(note)
-            }).catch(err => {
-                res.status(500).json(err)
+            .then(async note => {
+				if(await cache.exists(stage)) {
+					await cache.del(stage)
+				}
+                await res.status(200).json(note)
+            }).catch(async err => {
+                await res.status(500).json(err)
 			})
     }
 }
@@ -55,6 +68,7 @@ exports.deleteNote = () => {
         Note.deleteOne({ _id: id })
             .exec()
             .then(note => {
+				// delete cache key
                 res.status(200).json(note)
             })
             .catch(err => {
