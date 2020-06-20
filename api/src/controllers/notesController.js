@@ -6,7 +6,7 @@ exports.getNotes = (stage) => {
     return async (req, res) => {
 		if(await cache.exists(stage)) {
 			let cached_data = await cache.get(stage)
-			await res.status(304).json(JSON.parse(cached_data))
+			await res.status(200).json(JSON.parse(cached_data))
 		} else {
 			Note.find({ stage: stage }).select('-__v -stage')
 				.exec()

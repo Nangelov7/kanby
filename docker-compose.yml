@@ -12,7 +12,7 @@ services:
         environment:
             - DEV_DB_URI=${DEV_DB_URI}
             - TEST_DB_URI=${TEST_DB_URI}
-            - REDIS_URL=${REDIS_URL}
+            - DEV_REDIS_URI=${DEV_REDIS_URI}
         links:
             - db
             - cache

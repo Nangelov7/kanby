@@ -1,5 +1,5 @@
 {
-    "name": "Kanby",
+	"name": "Kanby",
     "description": "Project management software",
     "repository": "https://github.com/Nangelov7/kanby.git",
     "success_url": "/",

@@ -1,6 +1,7 @@
 API_NAME=kanby_api:latest
 CLIENT_NAME=kanby_client:latest
 DB_NAME=kanby_db:latest
+CACHE_NAME=kanby_cache:latest
 
 install: deps gulp prod
 
@@ -34,7 +35,7 @@ stop:
 	docker-compose stop
 
 rmi:
-	docker rmi $(API_NAME) $(CLIENT_NAME) $(DB_NAME)
+	docker rmi $(API_NAME) $(CLIENT_NAME) $(DB_NAME) $(CACHE_NAME)
 
 setup_heroku:
 	curl -n -X POST https://api.heroku.com/app-setups \
