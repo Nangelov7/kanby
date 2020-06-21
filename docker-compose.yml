@@ -13,6 +13,7 @@ services:
             - DEV_DB_URI=${DEV_DB_URI}
             - TEST_DB_URI=${TEST_DB_URI}
             - DEV_REDIS_URI=${DEV_REDIS_URI}
+            - REDIS_PASSWORD=${REDIS_PASSWORD}
         links:
             - db
             - cache
@@ -41,4 +42,5 @@ services:
     cache:
         container_name: kanby-cache
         image: redis:6.0.5-alpine
+        command: redis-server --requirepass ${REDIS_PASSWORD}
         restart: always
