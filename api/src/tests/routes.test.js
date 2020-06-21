@@ -1,4 +1,5 @@
 const app = require('../app')
+const cache = require('../config/cache')
 const mongoose = require('mongoose')
 const supertest = require('supertest')
 const Note = require('../models/Note')
@@ -18,6 +19,7 @@ afterEach(async () => {
 afterAll(async () => {
 	await Note.collection.drop()
 	await mongoose.connection.close()
+	await cache.quit()
 })
 
 describe('Test /backlog endpoint', () => {
