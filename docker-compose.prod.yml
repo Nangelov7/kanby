@@ -10,7 +10,7 @@ services:
             - "4000:4000"
         environment:
             - PROD_DB_URI=${PROD_DB_URI}
-            - REDIS_URL=${REDIS_URL}
+            - PROD_REDIS_URI=${PROD_REDIS_URI}
             - REDIS_PASSWORD=${REDIS_PASSWORD}
     client:
         container_name: kanby-client

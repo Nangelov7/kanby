@@ -17,6 +17,8 @@
   "dependencies": {
     "async-redis": "^1.1.7",
     "cors": "^2.8.5",
+    "dot-prop": "^5.1.1",
+    "elliptic": "^6.5.3",
     "express": "^4.17.1",
     "helmet": "^3.22.0",
     "minimist": "^1.2.3",
@@ -27,6 +29,7 @@
     "dotenv": "^8.2.0",
     "eslint": "^6.8.0",
     "jest": "^25.1.0",
+    "loadtest": "^5.0.4",
     "nodemon": "^2.0.2",
     "supertest": "^4.0.2",
     "terser-webpack-plugin": "^2.3.6",

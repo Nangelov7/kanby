@@ -62,10 +62,11 @@ class Note extends Component {
     }
 
     render() {
+		const { text } = this.props
         return (
             <>
                 <div className="note" draggable onMouseDown={this.dragAndDrop}>
-                    <p>{this.props.text}</p>
+                    <p>{text}</p>
                     <img className="deleteNote" src={deleteIcon} alt="Delete" onClick={this.openDialog} />
                 </div>
                 {this.state.dialogOpened ? <Dialog dialogType="DeleteNote" /> : null}

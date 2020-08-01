@@ -20,10 +20,11 @@ class Column extends Component {
     }
 
     render() {
+		const { stage } = this.props
         return (
             <>
                 <div className="container">
-                    <div className="stage"><span>{this.props.stage}</span></div>
+                    <div className="stage"><span>{stage}</span></div>
                     <div className="column">
                         {this.state.notes.map((note, i) => {
                             let { _id, text } = note

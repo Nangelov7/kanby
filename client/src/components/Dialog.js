@@ -5,7 +5,8 @@ import '../assets/styles/css/components/dialog.css'
 class Dialog extends Component {
 
     render() {
-		if(this.props.dialogType === "AddNote") {
+		const { dialogType } = this.props
+		if(dialogType === "AddNote") {
 			return (
 				<>
 					<dialog open>
@@ -24,7 +25,7 @@ class Dialog extends Component {
 					</dialog>
 				</>
 			)
-		} else if(this.props.dialogType === "DeleteNote") {
+		} else if(dialogType === "DeleteNote") {
 			return (
 				<>
 					<dialog open>

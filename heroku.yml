@@ -1,6 +1,8 @@
 setup:
     config:
         PROD_DB_URI: ${PROD_DB_URI}
+        PROD_REDIS_URI: ${PROD_REDIS_URI}
+        REDIS_PASSWORD: ${REDIS_PASSWORD}
 build:
     docker:
         web: api/Dockerfile.prod
