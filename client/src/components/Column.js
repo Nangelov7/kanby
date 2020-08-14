@@ -1,41 +1,32 @@
-import React, { Component } from 'react'
+import React, { useState, useEffect } from 'react'
 import Note from './Note'
 import NewNote from './NewNote'
 import '../assets/styles/css/components/column.css'
 
-class Column extends Component {
-    constructor(props) {
-        super(props)
-        this.state = {
-            notes: []
-        }
-    }
+const Column = (props) => {
 
-    static getDerivedStateFromProps(props, state) {
-        if(props.notes !== state.notes) {
-            return { notes: props.notes }
-        } else {
-            return null
-        }
-    }
+	const [notes, setNotes] = useState([])
 
-    render() {
-		const { stage } = this.props
-        return (
-            <>
-                <div className="container">
-                    <div className="stage"><span>{stage}</span></div>
-                    <div className="column">
-                        {this.state.notes.map((note, i) => {
-                            let { _id, text } = note
-                            return <Note key={i} noteId={_id} text={text}></Note>
-                        })}
-                        <NewNote></NewNote>
-                    </div>
-                </div>
-            </>
-        )
-    }
+	const { stage } = props
+
+	useEffect(() => {
+		if(props.notes !== notes) {
+			setNotes(props.notes)
+		}
+	}, [props.notes])
+
+	return (
+		<div className="container">
+			<div className="stage"><span>{stage}</span></div>
+			<div className="column">
+				{notes.map((note, i) => {
+					let { _id, text } = note
+					return <Note key={i} noteId={_id} text={text}></Note>
+				})}
+				<NewNote></NewNote>
+			</div>
+		</div>
+	)
 }
 
 export default Column

@@ -1,27 +1,17 @@
-import React, { Component } from 'react'
+import React, { useState } from 'react'
 import '../assets/styles/css/components/note.css'
 import deleteIcon from '../assets/images/delete.png'
 import Dialog from './Dialog'
 
-class Note extends Component {
+const Note = ({text}) => {
 
-    constructor(props) {
-        super(props)
-        this.state = {
-            dialogOpened: false
-        }
+	const [dialogOpened, setDialogOpened] = useState(false)
 
-        this.openDialog = this.openDialog.bind(this)
-        this.dragAndDrop = this.dragAndDrop.bind(this)
+    const openDialog = () => {
+		setDialogOpened(!dialogOpened)
     }
 
-    openDialog() {
-        this.setState({
-            dialogOpened: !this.state.dialogOpened
-        })
-    }
-
-    dragAndDrop() {
+    const dragAndDrop = () => {
         const columns = document.querySelectorAll('.column')
         const notes = document.querySelectorAll('.note')
         let selectedNote = null
@@ -61,18 +51,15 @@ class Note extends Component {
         }
     }
 
-    render() {
-		const { text } = this.props
-        return (
-            <>
-                <div className="note" draggable onMouseDown={this.dragAndDrop}>
-                    <p>{text}</p>
-                    <img className="deleteNote" src={deleteIcon} alt="Delete" onClick={this.openDialog} />
-                </div>
-                {this.state.dialogOpened ? <Dialog dialogType="DeleteNote" /> : null}
-            </>
-        )
-    }
+	return (
+		<>
+			<div className="note" draggable onMouseDown={dragAndDrop}>
+				<p>{text}</p>
+				<img className="deleteNote" src={deleteIcon} alt="Delete" onClick={openDialog} />
+			</div>
+			{dialogOpened ? <Dialog dialogType="DeleteNote" /> : null}
+		</>
+	)
 }
 
 export default Note

@@ -1,35 +1,24 @@
-import React, { PureComponent } from 'react'
+import React, { useState } from 'react'
 import '../assets/styles/css/components/newNote.css'
 import addIcon from '../assets/images/add.png'
 import Dialog from './Dialog'
 
-class NewNote extends PureComponent {
+const NewNote = () => {
 
-    constructor(props) {
-        super(props)
-        this.state = {
-            dialogOpened: false
-        }
+	const [dialogOpened, setDialogOpened] = useState(false)
 
-        this.openDialog = this.openDialog.bind(this)
+    const openDialog = () => {
+		setDialogOpened(!dialogOpened)
     }
 
-    openDialog() {
-        this.setState({
-            dialogOpened: !this.state.dialogOpened
-        })
-    }
-
-    render() {
-        return (
-            <>
-                <div className="newNote">
-                    <img className="addNote" src={addIcon} alt="Add" onClick={this.openDialog} />
-                </div>
-                {this.state.dialogOpened ? <Dialog dialogType="AddNote" /> : null}
-            </>
-        )
-    }
+	return (
+		<>
+			<div className="newNote">
+				<img className="addNote" src={addIcon} alt="Add" onClick={openDialog} />
+			</div>
+			{dialogOpened ? <Dialog dialogType="AddNote" /> : null}
+		</>
+	)
 }
 
 export default NewNote
