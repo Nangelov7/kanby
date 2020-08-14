@@ -3,7 +3,7 @@ CLIENT_NAME=kanby_client:latest
 DB_NAME=kanby_db:latest
 CACHE_NAME=kanby_cache:latest
 
-install: deps gulp
+install: deps gulp dev
 
 deps:
 	cd ./api && yarn

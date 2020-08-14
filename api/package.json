@@ -23,7 +23,7 @@
     "helmet": "^3.22.0",
     "minimist": "^1.2.3",
     "mongoose": "^5.8.11",
-    "morgan": "^1.9.1",
+    "morgan": "^1.10.0",
     "serialize-javascript": "^3.1.0"
   },
   "devDependencies": {
@@ -31,11 +31,11 @@
     "eslint": "^6.8.0",
     "jest": "^25.1.0",
     "loadtest": "^5.0.4",
-    "nodemon": "^2.0.2",
+    "nodemon": "^2.0.4",
     "supertest": "^4.0.2",
     "terser-webpack-plugin": "^2.3.6",
-    "webpack": "^4.43.0",
-    "webpack-cli": "^3.3.11",
+    "webpack": "^4.44.1",
+    "webpack-cli": "^3.3.12",
     "webpack-node-externals": "^1.7.2"
   }
 }

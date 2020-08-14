@@ -38,7 +38,7 @@ $ make help
 ```
 
 Open your browser and go to:
-> http://localhost
+> http://localhost:3000
 
 ## Authors
 * **Nikolay Angelov**
