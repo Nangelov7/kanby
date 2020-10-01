@@ -5,14 +5,24 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@hapi/hoek": "^8.5.1",
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.3.2",
     "@testing-library/user-event": "^7.1.2",
+    "acorn": "^7.1.1",
     "axios": "^0.19.2",
+    "dot-prop": "^4.2.1",
+    "elliptic": "^6.5.3",
+    "http-proxy": "^1.18.1",
+    "lodash": "^4.17.19",
+    "minimist": "^1.2.3",
+    "node-forge": "^0.10.0",
     "node-sass": "^4.14.1",
     "react": "^16.12.0",
     "react-dom": "^16.12.0",
-    "react-scripts": "3.3.1"
+    "react-scripts": "3.3.1",
+    "serialize-javascript": "^3.1.0",
+    "websocket-extensions": "^0.1.4"
   },
   "scripts": {
     "start": "react-scripts start",
