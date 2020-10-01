@@ -3,14 +3,11 @@ CLIENT_NAME=kanby_client:latest
 DB_NAME=kanby_db:latest
 CACHE_NAME=kanby_cache:latest
 
-install: deps gulp dev
+install: deps dev
 
 deps:
 	cd ./api && yarn
 	cd ./client && yarn
-
-gulp:
-	cd ./client && gulp
 
 test:
 	docker exec -it kanby-api yarn test
@@ -46,7 +43,6 @@ help:
 	@echo '| help						show helpful information                  |'
 	@echo '| install					complete installation process             |'
 	@echo '| deps						install all necessary dependencies        |'
-	@echo '| gulp						run all gulp tasks                        |'
 	@echo '| test						run all tests inside a docker container   |'
 	@echo '| build						build all docker images                   |'
 	@echo '| up     					start all docker containers               |'

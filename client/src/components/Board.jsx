@@ -1,7 +1,7 @@
 import React, { useContext } from 'react'
 import { Context } from '../Context'
 import Column from './Column'
-import '../assets/styles/css/layout/board.css'
+import '../assets/styles/layout/board.scss'
 
 const Board = () => {
 

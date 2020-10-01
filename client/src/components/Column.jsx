@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import Note from './Note'
 import NewNote from './NewNote'
-import '../assets/styles/css/components/column.css'
+import '../assets/styles/components/column.scss'
 
 const Column = (props) => {
 

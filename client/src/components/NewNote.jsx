@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import '../assets/styles/css/components/newNote.css'
+import '../assets/styles/components/newNote.scss'
 import addIcon from '../assets/images/add.png'
 import Dialog from './Dialog'
 

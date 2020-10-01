@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import '../assets/styles/css/components/note.css'
+import '../assets/styles/components/note.scss'
 import deleteIcon from '../assets/images/delete.png'
 import Dialog from './Dialog'
 

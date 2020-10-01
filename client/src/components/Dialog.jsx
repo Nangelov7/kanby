@@ -1,6 +1,6 @@
 import React from 'react'
 import Button from './Button'
-import '../assets/styles/css/components/dialog.css'
+import '../assets/styles/components/dialog.scss'
 
 const Dialog = ({dialogType}) => {
 

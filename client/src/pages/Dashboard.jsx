@@ -3,7 +3,7 @@ import { Provider } from '../Context'
 import Header from '../components/Header'
 import Sidebar from '../components/Sidebar'
 import Board from '../components/Board'
-import '../assets/styles/css/base/dashboard.css'
+import '../assets/styles/base/dashboard.scss'
 
 const Dashboard = () => {
 	return (
